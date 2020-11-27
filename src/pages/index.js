@@ -86,16 +86,16 @@ const IndexPage = () => {
           <p>{homePageDescription}</p>
           <BottomEdgeUp color={COLORS.PRIMARY} />
         </div>
-        <div className="artists">
+        <div className="movies">
           <h2>Featured movies</h2>
-          <div className="artist-items">
+          <div className="movie-items">
             {homePageFeaturedMovies.map(({ movie, slug }) => (
               <Artist key={slug} to={`/${slug}`}>
                 <Image
                   fluid={movie.poster.imageFile.childImageSharp.fluid}
                   altText={movie.poster.altText}
                 />
-                <div className="artist-info">
+                <div className="movie-info">
                   <p>{movie.title}</p>
                 </div>
               </Artist>

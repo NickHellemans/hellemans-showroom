@@ -79,16 +79,16 @@ const MoviesPage = () => {
           <p>{moviesPageDescription}</p>
           <BottomEdgeUp color={COLORS.BLACK} />
         </div>
-        <div className="artists">
+        <div className="movies">
           <h2>Our movies</h2>
-          <div className="artist-items">
+          <div className="movie-items">
             {movies.map(({ node: { movie, slug } }) => (
               <Artist key={slug} to={`/${slug}`}>
                 <Image
                   fluid={movie.poster.imageFile.childImageSharp.fluid}
                   alt={movie.poster.altText}
                 />
-                <div className="artist-info">
+                <div className="movie-info">
                   <p>{movie.title}</p>
                   <p>{movie.reviewScore}/10</p>
                 </div>
