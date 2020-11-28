@@ -6,7 +6,7 @@ import SEO from "../components/Seo"
 import {
   Wrapper,
   Image,
-  Artist,
+  Movie,
   BottomEdgeDown,
   BottomEdgeUp,
 } from "./pageStyles/pageStyles"
@@ -46,6 +46,7 @@ const IndexPage = () => {
             homePageFeaturedMovies {
               ... on WPGraphql_Movie {
                 id
+                slug
                 movie {
                   title
                   poster {
@@ -90,7 +91,7 @@ const IndexPage = () => {
           <h2>Featured movies</h2>
           <div className="movie-items">
             {homePageFeaturedMovies.map(({ movie, slug }) => (
-              <Artist key={slug} to={`/${slug}`}>
+              <Movie key={slug} to={`/${slug}`}>
                 <Image
                   fluid={movie.poster.imageFile.childImageSharp.fluid}
                   altText={movie.poster.altText}
@@ -98,7 +99,7 @@ const IndexPage = () => {
                 <div className="movie-info">
                   <p>{movie.title}</p>
                 </div>
-              </Artist>
+              </Movie>
             ))}
           </div>
         </div>

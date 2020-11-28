@@ -5,7 +5,7 @@ import SEO from "../components/Seo"
 import {
   Wrapper,
   Image,
-  Artist,
+  Movie,
   BottomEdgeDown,
   BottomEdgeUp,
 } from "./pageStyles/pageStyles"
@@ -83,7 +83,7 @@ const MoviesPage = () => {
           <h2>Our movies</h2>
           <div className="movie-items">
             {movies.map(({ node: { movie, slug } }) => (
-              <Artist key={slug} to={`/${slug}`}>
+              <Movie key={slug} to={`/${slug}`}>
                 <Image
                   fluid={movie.poster.imageFile.childImageSharp.fluid}
                   alt={movie.poster.altText}
@@ -92,7 +92,7 @@ const MoviesPage = () => {
                   <p>{movie.title}</p>
                   <p>{movie.reviewScore}/10</p>
                 </div>
-              </Artist>
+              </Movie>
             ))}
           </div>
         </div>
