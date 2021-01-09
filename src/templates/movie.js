@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
-import { Wrapper, Image } from "./templateStyles/artistStyles"
+import { Wrapper, Image } from "./templateStyles/movieStyles"
 
 const MovieTemplate = ({
   data: {
@@ -68,7 +68,7 @@ export const pageQuery = graphql`
             sourceUrl
             imageFile {
               childImageSharp {
-                fluid(quality: 100) {
+                fluid(quality: 50) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

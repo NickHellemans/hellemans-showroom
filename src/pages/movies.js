@@ -8,7 +8,7 @@ import {
   Movie,
   BottomEdgeDown,
   BottomEdgeUp,
-} from "./pageStyles/pageStyles"
+} from "../pageStyles/pageStyles"
 import { COLORS } from "../constants.js"
 
 const MoviesPage = () => {
@@ -49,7 +49,7 @@ const MoviesPage = () => {
                   sourceUrl
                   imageFile {
                     childImageSharp {
-                      fluid(quality: 100, grayscale: true) {
+                      fluid(quality: 50, grayscale: true) {
                         ...GatsbyImageSharpFluid_withWebp
                       }
                     }
